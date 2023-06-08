@@ -379,6 +379,8 @@ strong {
 .logo {
   width: 50px;
   height: auto;
+  
+  mix-blend-mode: multiply;
 }
 
 .navbar-expand-lg .navbar-nav .nav-link {

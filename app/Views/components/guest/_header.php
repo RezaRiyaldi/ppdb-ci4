@@ -46,7 +46,7 @@
     <nav class="navbar navbar-expand-lg bg-light shadow-lg">
         <div class="container">
             <a class="navbar-brand" href="index.html">
-                <img src="<?= base_url() ?>assets/guest/images/logo.png" class="logo img-fluid" alt="Kind Heart Charity">
+                <img src="<?= base_url() ?>assets/guest/images/icons/logo.jpeg" class="logo img-fluid" alt="Kind Heart Charity">
                 <span>
                     Pasir Gombong 2
                     <small>Sekolah Dasar Negeri</small>

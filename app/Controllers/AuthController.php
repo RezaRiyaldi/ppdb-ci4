@@ -21,8 +21,6 @@ class AuthController extends BaseController
     {
         $data['title'] = "Login";
 
-        echo $this->createNumberRegistration();
-
         return view('guest/login', $data);
     }
 
