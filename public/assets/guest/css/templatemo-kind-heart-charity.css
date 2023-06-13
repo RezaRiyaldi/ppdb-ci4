@@ -682,7 +682,7 @@ strong {
   border-radius: var(--border-radius-medium);
   display: block;
   width: 350px;
-  height: 400px;
+  height: 500px;
   object-fit: cover;
 }
 

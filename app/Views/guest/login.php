@@ -26,7 +26,6 @@
                             <input type="password" class="form-control" name="password" placeholder="Password" aria-label="password" aria-describedby="password">
                         </div>
                         <div class="d-flex align-items-center">
-                            <a href="#" class="my-text w-50">Lupa password?</a>
                             <button type="submit" class="w-50 btn btn-primary my-button">Login</button>
                         </div>
                     </form>

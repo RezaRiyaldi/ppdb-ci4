@@ -31,12 +31,11 @@ $uri = service('uri')->getSegment(1);
                     <a href="element.html" class="dropdown-item">Other Elements</a>
                 </div>
             </div> -->
-            <?php if ($user->role == "Siswa") : ?>
-                <a href="<?= base_url() ?>documents" class="nav-item nav-link"><i class="fa fa-file me-2"></i>Dokumen</a>
+            <?php if ($user->role == "Admin"):  ?>
+                <a href="<?= base_url() ?>users" class="nav-item nav-link <?= $uri == "users" ? "active" : "" ?>"><i class="fa fa-users me-2"></i>Users</a>
+                <a href="<?= base_url() ?>forms" class="nav-item nav-link <?= $uri == "forms" ? "active" : "" ?>"><i class="fa fa-file me-2"></i>Forms</a>
+                <a href="<?= base_url() ?>students" class="nav-item nav-link <?= $uri == "students" ? "active" : "" ?>"><i class="fas fa-user-graduate me-2"></i></i>Students</a>
             <?php endif ?>
-            <a href="<?= base_url() ?>users" class="nav-item nav-link <?= $uri == "users" ? "active" : "" ?>"><i class="fa fa-users me-2"></i>Users</a>
-            <a href="table.html" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Tables</a>
-            <a href="chart.html" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Charts</a>
         </div>
     </nav>
 </div>

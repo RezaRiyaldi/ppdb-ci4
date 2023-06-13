@@ -39,8 +39,17 @@ $routes->get('/logout', 'AuthController::actionLogout');
 $routes->get('/dashboard', 'DashboardController::index', ['filter' => 'auth']);
 $routes->get('/users', 'DashboardController::users_management', ['filter' => 'auth']);
 $routes->post('/users/add', 'DashboardController::user_add', ['filter' => 'auth']);
+$routes->get('/users/edit/(:num)', 'DashboardController::user_edit/$1', ['filter' => 'auth']);
+$routes->post('/users/edit/(:num)', 'DashboardController::actionUserEdit/$1', ['filter' => 'auth']);
 $routes->get('/users/delete/(:any)', 'DashboardController::user_delete/$1', ['filter' => 'auth']);
+$routes->get('/forms', 'DashboardController::forms_management', ['filter' => 'auth']);
+$routes->get('/forms/detail/(:num)', 'DashboardController::form_detail/$1', ['filter' => 'auth']);
+$routes->get('/forms/acc/(:num)', 'DashboardController::form_acc/$1', ['filter' => 'auth']);
+$routes->post('/forms/edit/(:any)', 'DashboardController::form_edit/$1', ['filter' => 'auth']);
 
+$routes->get('/students', 'DashboardController::students_management', ['filter' => 'auth']);
+$routes->get('/get-students-ajax', 'DashboardController::getStudentsAjax', ['filter' => 'auth']);
+$routes->get('/students/export', 'DashboardController::export_students', ['filter' => 'auth']);
 /*
  * --------------------------------------------------------------------
  * Additional Routing

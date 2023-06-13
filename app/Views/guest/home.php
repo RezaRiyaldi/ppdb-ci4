@@ -9,33 +9,11 @@
                 <div id="hero-slide" class="carousel carousel-fade slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="<?= base_url() ?>assets/guest/images/slide/volunteer-helping-with-donation-box.jpg" class="carousel-image img-fluid" alt="...">
-
-                            <div class="carousel-caption d-flex flex-column justify-content-end">
-                                <h1>be a Kind Heart</h1>
-
-                                <p>Professional charity theme based on Bootstrap 5.2.2</p>
-                            </div>
+                            <img src="https://scontent.fcgk18-2.fna.fbcdn.net/v/t39.30808-6/297429806_383974687185406_4711487262776025961_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=5cd70e&_nc_ohc=pGolojP0XTIAX8IdOyI&_nc_ht=scontent.fcgk18-2.fna&oh=00_AfAFwODtcs9kb2bB2UmYZP41O9gLEsUpAjp2ytLzN30Npg&oe=648A7BE2" class="carousel-image img-fluid" alt="...">
                         </div>
 
                         <div class="carousel-item">
-                            <img src="<?= base_url() ?>assets/guest/images/slide/volunteer-selecting-organizing-clothes-donations-charity.jpg" class="carousel-image img-fluid" alt="...">
-
-                            <div class="carousel-caption d-flex flex-column justify-content-end">
-                                <h1>Non-profit</h1>
-
-                                <p>You can support us to grow more</p>
-                            </div>
-                        </div>
-
-                        <div class="carousel-item">
-                            <img src="<?= base_url() ?>assets/guest/images/slide/medium-shot-people-collecting-donations.jpg" class="carousel-image img-fluid" alt="...">
-
-                            <div class="carousel-caption d-flex flex-column justify-content-end">
-                                <h1>Humanity</h1>
-
-                                <p>Please tell your friends about our website</p>
-                            </div>
+                            <img src="https://scontent.fcgk18-2.fna.fbcdn.net/v/t39.30808-6/297253019_383974607185414_3125001539470235245_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=5cd70e&_nc_ohc=EwdF8IRTXp8AX_FoNbb&_nc_ht=scontent.fcgk18-2.fna&oh=00_AfCnff9Lgy7IHA69rI3erkqM8HYAWtUdb1rJ6Cirgpp56Q&oe=648A183E" alt="...">
                         </div>
                     </div>
 
@@ -56,126 +34,23 @@
 </section>
 
 
-<section class="section-padding" id="section_2">
-    <div class="container">
-        <div class="row gap-3">
-
-            <div class="col-lg-8 col-12 text-center mx-auto">
-                <h2 class="my-auto">Visi Misi</h2>
-            </div>
-
-            <div class="col-lg-8 col-12 mx-auto">
-                <div class="card">
-                    <div class="card-body">
-                        <h3 class="featured-block-text mb-3 fw-bold" style="font-size: 2em;">Visi</h3>
-                        <p class="featured-block-text" style="font-size: 1.2em;">Membangun manusia yang unggul dalam prestasi berdasarkan iman dan taqwa</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-8 col-12 mx-auto">
-                <div class="card">
-                    <div class="card-body">
-                        <h3 class="featured-block-text mb-3 fw-bold" style="font-size: 2em;">Misi</h3>
-                        <ol class="featured-block-text" style="font-size: 1.2em;">
-                        <li>Meningkatkan keimanan dan ketaqwaan terhadap Tuhan Yang maha Esa.</li>
-                        <li>Melaksanakan pembelajaran dan bimbingan secara efektif sehingga setiap siswa dapat berkembang secara optimal sesuai dengan potensi yang dimiliki.</li>
-                        <li>Menumbuhkan penghayatan terhadap ajaran agama yang dianut dan juga budaya bangsa menjadi sumber kearipan dalam bertindak.</li>
-                    </ol>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="section-padding section-bg" id="">
-    <div class="container">
-        <div class="row">
-
-            <div class="col-lg-6 col-12 mb-5 mb-lg-0">
-                <img src="<?= base_url() ?>assets/guest/images/group-people-volunteering-foodbank-poor-people.jpg" class="custom-text-box-image img-fluid" alt="">
-            </div>
-
-            <div class="col-lg-6 col-12">
-                <div class="custom-text-box">
-                    <h2 class="mb-2">Our Story</h2>
-
-                    <h5 class="mb-3">Kind Heart Charity, Non-Profit Organization</h5>
-
-                    <p class="mb-0">This is a Bootstrap 5.2.2 CSS template for charity organization websites.
-                        You can feel free to use it. Please tell your friends about TemplateMo website. Thank
-                        you.</p>
-                </div>
-
-                <div class="row">
-                    <div class="col-lg-6 col-md-6 col-12">
-                        <div class="custom-text-box mb-lg-0">
-                            <h5 class="mb-3">Our Mission</h5>
-
-                            <p>Sed leo nisl, posuere at molestie ac, suscipit auctor quis metus</p>
-
-                            <ul class="custom-list mt-2">
-                                <li class="custom-list-item d-flex">
-                                    <i class="bi-check custom-text-box-icon me-2"></i>
-                                    Charity Theme
-                                </li>
-
-                                <li class="custom-list-item d-flex">
-                                    <i class="bi-check custom-text-box-icon me-2"></i>
-                                    Semantic HTML
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6 col-md-6 col-12">
-                        <div class="custom-text-box d-flex flex-wrap d-lg-block mb-lg-0">
-                            <div class="counter-thumb">
-                                <div class="d-flex">
-                                    <span class="counter-number" data-from="1" data-to="2009" data-speed="1000"></span>
-                                    <span class="counter-number-text"></span>
-                                </div>
-
-                                <span class="counter-text">Founded</span>
-                            </div>
-
-                            <div class="counter-thumb mt-4">
-                                <div class="d-flex">
-                                    <span class="counter-number" data-from="1" data-to="120" data-speed="1000"></span>
-                                    <span class="counter-number-text">B</span>
-                                </div>
-
-                                <span class="counter-text">Donations</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-
-<section class="about-section section-padding">
+<section class="section-bg section-padding" id="section_2">
     <div class="container">
         <div class="row">
 
             <div class="col-lg-6 col-md-5 col-12">
-                <img src="<?= base_url() ?>assets/guest/images/portrait-volunteer-who-organized-donations-charity.jpg" class="about-image ms-lg-auto bg-light shadow-lg img-fluid" alt="">
+                <img src="<?= base_url() ?>assets/guest/images/avatar/kepsek.jpeg" class="about-image ms-lg-auto bg-light shadow-lg img-fluid" alt="">
             </div>
 
             <div class="col-lg-5 col-md-7 col-12">
                 <div class="custom-text-block">
-                    <h2 class="mb-0">Sandy Chan</h2>
+                    <h3 class="mb-0 text-success">Mida Puspita Sari S.Pd.</h3>
 
-                    <p class="text-muted mb-lg-4 mb-md-4">Founding Partner</p>
+                    <p class="text-muted mb-lg-4 mb-md-4">Kepala Sekolah</p>
 
-                    <p>Lorem Ipsum dolor sit amet, consectetur adipsicing kengan omeg kohm tokito Professional
-                        charity theme based</p>
+                    <p>Selamat datang, calon siswa! Kami dengan senang hati menyambut kehadiran kalian di sekolah kami.</p>
 
-                    <p>Sed leo nisl, posuere at molestie ac, suscipit auctor mauris. Etiam quis metus</p>
+                    <p>Mari kita bersama-sama menjalani perjalanan pendidikan yang bermakna dan penuh prestasi. Selamat bergabung!</p>
 
                     <ul class="social-icon mt-4">
                         <li class="social-icon-item">
@@ -197,18 +72,57 @@
     </div>
 </section>
 
+
+<section class="section-padding" id="section_3">
+    <div class="container">
+        <div class="row gap-3">
+
+            <div class="col-lg-8 col-12 text-center mx-auto">
+                <h2 class="my-auto">Visi Misi</h2>
+            </div>
+
+            <div class="col-lg-8 col-12 mx-auto">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="featured-block-text mb-3 fw-bold" style="font-size: 2em;">Visi</h3>
+                        <p class="featured-block-text" style="font-size: 1.2em;">Terwujudnya Peserta Didik yang Berprestasi Beriman dan Berbudi Pekerti</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-8 col-12 mx-auto">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="featured-block-text mb-3 fw-bold" style="font-size: 2em;">Misi</h3>
+                        <ol class="featured-block-text" style="font-size: 1.2em;">
+                            <li>Menanamkan karakter Religius melalui kebiasaan.</li>
+                            <li>Menanamkan Perilaku Jujur, Displin, dan Bertanggung Jawab.</li>
+                            <li>Mengoptimalkan Pengelolaan Lingkungan Hidup.</li>
+                            <li>Memanfaatkan Program Extrakurikuler dalam Pengembangan Bakat, Minat, dan Kemampuan Siswa.</li>
+                            <li>Mengembangkan Pendidikan Kepramukaaan.</li>
+                            <li>Meningkatkan Profesionalisme Guru melalui Pendidikan Formal dan PKB.</li>
+                            <li>Mengoptimalkan Peran Komite Sekolah dan Pengurus Kelas dalam berbagai Kegiatan Sekolah.</li>
+                            <li>Menjalin Kerjasama yang Harmonis antar Sekolah dan Lingkungan Masyarakat.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
 <section class="cta-section section-padding section-bg">
     <div class="container">
         <div class="row justify-content-center align-items-center">
 
             <div class="col-lg-5 col-12 ms-auto">
-                <h2 class="mb-0">Make an impact. <br> Save lives.</h2>
+                <h2 class="mb-0">Ingin mendaftar?</h2>
             </div>
 
             <div class="col-lg-5 col-12">
-                <a href="#" class="me-4">Make a donation</a>
-
-                <a href="#section_4" class="custom-btn btn smoothscroll">Become a volunteer</a>
+                <a href="<?= base_url() ?>register" class="custom-btn btn smoothscroll">Isi Formulir</a>
             </div>
 
         </div>
@@ -216,569 +130,54 @@
 </section>
 
 
-<section class="section-padding" id="section_3">
+<section class="section-padding" id="section_4">
     <div class="container">
         <div class="row">
 
             <div class="col-lg-12 col-12 text-center mb-4">
-                <h2>Our Causes</h2>
+                <h2>Ekstrakurikuler</h2>
             </div>
 
             <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
                 <div class="custom-block-wrap">
-                    <img src="<?= base_url() ?>assets/guest/images/causes/group-african-kids-paying-attention-class.jpg" class="custom-block-image img-fluid" alt="">
+                    <img src="https://images.unsplash.com/photo-1619973516465-da5fecfad5f3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" class="custom-block-image img-fluid" alt="">
 
                     <div class="custom-block">
                         <div class="custom-block-body">
-                            <h5 class="mb-3">Children Education</h5>
+                            <h5 class="mb-3">Pramuka</h5>
 
-                            <p>Lorem Ipsum dolor sit amet, consectetur adipsicing kengan omeg kohm tokito</p>
-
-                            <div class="progress mt-4">
-                                <div class="progress-bar w-75" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-
-                            <div class="d-flex align-items-center my-2">
-                                <p class="mb-0">
-                                    <strong>Raised:</strong>
-                                    $18,500
-                                </p>
-
-                                <p class="ms-auto mb-0">
-                                    <strong>Goal:</strong>
-                                    $32,000
-                                </p>
-                            </div>
+                            <p>Ekskul Pramuka adalah kegiatan luar kelas yang mengajarkan keterampilan, kejujuran, kerjasama, dan keberanian kepada calon murid SD.</p>
                         </div>
-
-                        <a href="donate.html" class="custom-btn btn">Donate now</a>
                     </div>
                 </div>
             </div>
 
             <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
                 <div class="custom-block-wrap">
-                    <img src="<?= base_url() ?>assets/guest/images/causes/poor-child-landfill-looks-forward-with-hope.jpg" class="custom-block-image img-fluid" alt="">
+                    <img src="https://images.unsplash.com/photo-1676444920926-c8a084ec4003?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" class="custom-block-image img-fluid" alt="">
 
                     <div class="custom-block">
                         <div class="custom-block-body">
-                            <h5 class="mb-3">Poverty Development</h5>
+                            <h5 class="mb-3">Futsal</h5>
 
-                            <p>Sed leo nisl, posuere at molestie ac, suscipit auctor mauris. Etiam quis metus
-                                tempor</p>
-
-                            <div class="progress mt-4">
-                                <div class="progress-bar w-50" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-
-                            <div class="d-flex align-items-center my-2">
-                                <p class="mb-0">
-                                    <strong>Raised:</strong>
-                                    $27,600
-                                </p>
-
-                                <p class="ms-auto mb-0">
-                                    <strong>Goal:</strong>
-                                    $60,000
-                                </p>
-                            </div>
+                            <p>Ekskul futsal adalah kegiatan olahraga sepak bola dalam ruangan yang mengajarkan teknik, strategi, dan teamwork kepada calon murid SD.</p>
                         </div>
-
-                        <a href="donate.html" class="custom-btn btn">Donate now</a>
                     </div>
                 </div>
             </div>
 
             <div class="col-lg-4 col-md-6 col-12">
                 <div class="custom-block-wrap">
-                    <img src="<?= base_url() ?>assets/guest/images/causes/african-woman-pouring-water-recipient-outdoors.jpg" class="custom-block-image img-fluid" alt="">
+                    <img src="https://images.unsplash.com/photo-1609329007778-42630e6b1580?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" class="custom-block-image img-fluid" alt="">
 
                     <div class="custom-block">
                         <div class="custom-block-body">
-                            <h5 class="mb-3">Supply drinking water</h5>
+                            <h5 class="mb-3">Tari Tradisional</h5>
 
-                            <p>Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus
-                            </p>
-
-                            <div class="progress mt-4">
-                                <div class="progress-bar w-100" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-
-                            <div class="d-flex align-items-center my-2">
-                                <p class="mb-0">
-                                    <strong>Raised:</strong>
-                                    $84,600
-                                </p>
-
-                                <p class="ms-auto mb-0">
-                                    <strong>Goal:</strong>
-                                    $100,000
-                                </p>
-                            </div>
-                        </div>
-
-                        <a href="donate.html" class="custom-btn btn">Donate now</a>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<section class="volunteer-section section-padding" id="section_4">
-    <div class="container">
-        <div class="row">
-
-            <div class="col-lg-6 col-12">
-                <h2 class="text-white mb-4">Volunteer</h2>
-
-                <form class="custom-form volunteer-form mb-5 mb-lg-0" action="#" method="post" role="form">
-                    <h3 class="mb-4">Become a volunteer today</h3>
-
-                    <div class="row">
-                        <div class="col-lg-6 col-12">
-                            <input type="text" name="volunteer-name" id="volunteer-name" class="form-control" placeholder="Jack Doe" required>
-                        </div>
-
-                        <div class="col-lg-6 col-12">
-                            <input type="email" name="volunteer-email" id="volunteer-email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Jackdoe@gmail.com" required>
-                        </div>
-
-                        <div class="col-lg-6 col-12">
-                            <input type="text" name="volunteer-subject" id="volunteer-subject" class="form-control" placeholder="Subject" required>
-                        </div>
-
-                        <div class="col-lg-6 col-12">
-                            <div class="input-group input-group-file">
-                                <input type="file" class="form-control" id="inputGroupFile02">
-
-                                <label class="input-group-text" for="inputGroupFile02">Upload your CV</label>
-
-                                <i class="bi-cloud-arrow-up ms-auto"></i>
-                            </div>
-                        </div>
-                    </div>
-
-                    <textarea name="volunteer-message" rows="3" class="form-control" id="volunteer-message" placeholder="Comment (Optional)"></textarea>
-
-                    <button type="submit" class="form-control">Submit</button>
-                </form>
-            </div>
-
-            <div class="col-lg-6 col-12">
-                <img src="<?= base_url() ?>assets/guest/images/smiling-casual-woman-dressed-volunteer-t-shirt-with-badge.jpg" class="volunteer-image img-fluid" alt="">
-
-                <div class="custom-block-body text-center">
-                    <h4 class="text-white mt-lg-3 mb-lg-3">About Volunteering</h4>
-
-                    <p class="text-white">Lorem Ipsum dolor sit amet, consectetur adipsicing kengan omeg kohm
-                        tokito Professional charity theme based</p>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<section class="news-section section-padding" id="section_5">
-    <div class="container">
-        <div class="row">
-
-            <div class="col-lg-12 col-12 mb-5">
-                <h2>Latest News</h2>
-            </div>
-
-            <div class="col-lg-7 col-12">
-                <div class="news-block">
-                    <div class="news-block-top">
-                        <a href="news-detail.html">
-                            <img src="<?= base_url() ?>assets/guest/images/news/medium-shot-volunteers-with-clothing-donations.jpg" class="news-image img-fluid" alt="">
-                        </a>
-
-                        <div class="news-category-block">
-                            <a href="#" class="category-block-link">
-                                Lifestyle,
-                            </a>
-
-                            <a href="#" class="category-block-link">
-                                Clothing Donation
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="news-block-info">
-                        <div class="d-flex mt-2">
-                            <div class="news-block-date">
-                                <p>
-                                    <i class="bi-calendar4 custom-icon me-1"></i>
-                                    October 12, 2036
-                                </p>
-                            </div>
-
-                            <div class="news-block-author mx-5">
-                                <p>
-                                    <i class="bi-person custom-icon me-1"></i>
-                                    By Admin
-                                </p>
-                            </div>
-
-                            <div class="news-block-comment">
-                                <p>
-                                    <i class="bi-chat-left custom-icon me-1"></i>
-                                    32 Comments
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="news-block-title mb-2">
-                            <h4><a href="news-detail.html" class="news-block-title-link">Clothing donation to
-                                    urban area</a></h4>
-                        </div>
-
-                        <div class="news-block-body">
-                            <p>Lorem Ipsum dolor sit amet, consectetur adipsicing kengan omeg kohm tokito
-                                Professional charity theme based on Bootstrap</p>
+                            <p>Ekskul tari adalah belajar gerak tubuh, ekspresi, koordinasi, kreativitas, dan menghargai keanekaragaman budaya.</p>
                         </div>
                     </div>
                 </div>
-
-                <div class="news-block mt-3">
-                    <div class="news-block-top">
-                        <a href="news-detail.html">
-                            <img src="<?= base_url() ?>assets/guest/images/news/medium-shot-people-collecting-foodstuff.jpg" class="news-image img-fluid" alt="">
-                        </a>
-
-                        <div class="news-category-block">
-                            <a href="#" class="category-block-link">
-                                Food,
-                            </a>
-
-                            <a href="#" class="category-block-link">
-                                Donation,
-                            </a>
-
-                            <a href="#" class="category-block-link">
-                                Caring
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="news-block-info">
-                        <div class="d-flex mt-2">
-                            <div class="news-block-date">
-                                <p>
-                                    <i class="bi-calendar4 custom-icon me-1"></i>
-                                    October 20, 2036
-                                </p>
-                            </div>
-
-                            <div class="news-block-author mx-5">
-                                <p>
-                                    <i class="bi-person custom-icon me-1"></i>
-                                    By Admin
-                                </p>
-                            </div>
-
-                            <div class="news-block-comment">
-                                <p>
-                                    <i class="bi-chat-left custom-icon me-1"></i>
-                                    35 Comments
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="news-block-title mb-2">
-                            <h4><a href="news-detail.html" class="news-block-title-link">Food donation area</a>
-                            </h4>
-                        </div>
-
-                        <div class="news-block-body">
-                            <p>Sed leo nisl, posuere at molestie ac, suscipit auctor mauris. Etiam quis metus
-                                elementum, tempor risus vel, condimentum orci</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-12 mx-auto">
-                <form class="custom-form search-form" action="#" method="post" role="form">
-                    <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-
-                    <button type="submit" class="form-control">
-                        <i class="bi-search"></i>
-                    </button>
-                </form>
-
-                <h5 class="mt-5 mb-3">Recent news</h5>
-
-                <div class="news-block news-block-two-col d-flex mt-4">
-                    <div class="news-block-two-col-image-wrap">
-                        <a href="news-detail.html">
-                            <img src="<?= base_url() ?>assets/guest/images/news/africa-humanitarian-aid-doctor.jpg" class="news-image img-fluid" alt="">
-                        </a>
-                    </div>
-
-                    <div class="news-block-two-col-info">
-                        <div class="news-block-title mb-2">
-                            <h6><a href="news-detail.html" class="news-block-title-link">Food donation area</a>
-                            </h6>
-                        </div>
-
-                        <div class="news-block-date">
-                            <p>
-                                <i class="bi-calendar4 custom-icon me-1"></i>
-                                October 16, 2036
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="news-block news-block-two-col d-flex mt-4">
-                    <div class="news-block-two-col-image-wrap">
-                        <a href="news-detail.html">
-                            <img src="<?= base_url() ?>assets/guest/images/news/close-up-happy-people-working-together.jpg" class="news-image img-fluid" alt="">
-                        </a>
-                    </div>
-
-                    <div class="news-block-two-col-info">
-                        <div class="news-block-title mb-2">
-                            <h6><a href="news-detail.html" class="news-block-title-link">Volunteering Clean</a>
-                            </h6>
-                        </div>
-
-                        <div class="news-block-date">
-                            <p>
-                                <i class="bi-calendar4 custom-icon me-1"></i>
-                                October 24, 2036
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="category-block d-flex flex-column">
-                    <h5 class="mb-3">Categories</h5>
-
-                    <a href="#" class="category-block-link">
-                        Drinking water
-                        <span class="badge">20</span>
-                    </a>
-
-                    <a href="#" class="category-block-link">
-                        Food Donation
-                        <span class="badge">30</span>
-                    </a>
-
-                    <a href="#" class="category-block-link">
-                        Children Education
-                        <span class="badge">10</span>
-                    </a>
-
-                    <a href="#" class="category-block-link">
-                        Poverty Development
-                        <span class="badge">15</span>
-                    </a>
-
-                    <a href="#" class="category-block-link">
-                        Clothing Donation
-                        <span class="badge">20</span>
-                    </a>
-                </div>
-
-                <div class="tags-block">
-                    <h5 class="mb-3">Tags</h5>
-
-                    <a href="#" class="tags-block-link">
-                        Donation
-                    </a>
-
-                    <a href="#" class="tags-block-link">
-                        Clothing
-                    </a>
-
-                    <a href="#" class="tags-block-link">
-                        Food
-                    </a>
-
-                    <a href="#" class="tags-block-link">
-                        Children
-                    </a>
-
-                    <a href="#" class="tags-block-link">
-                        Education
-                    </a>
-
-                    <a href="#" class="tags-block-link">
-                        Poverty
-                    </a>
-
-                    <a href="#" class="tags-block-link">
-                        Clean Water
-                    </a>
-                </div>
-
-                <form class="custom-form subscribe-form" action="#" method="post" role="form">
-                    <h5 class="mb-4">Newsletter Form</h5>
-
-                    <input type="email" name="subscribe-email" id="subscribe-email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Email Address" required>
-
-                    <div class="col-lg-12 col-12">
-                        <button type="submit" class="form-control">Subscribe</button>
-                    </div>
-                </form>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-
-<section class="testimonial-section section-padding section-bg">
-    <div class="container">
-        <div class="row">
-
-            <div class="col-lg-8 col-12 mx-auto">
-                <h2 class="mb-lg-3">Happy customers</h2>
-
-                <div id="testimonial-carousel" class="carousel carousel-fade slide" data-bs-ride="carousel">
-
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <div class="carousel-caption">
-                                <h4 class="carousel-title">Lorem Ipsum dolor sit amet, consectetur adipsicing
-                                    kengan omeg kohm tokito charity theme</h4>
-
-                                <small class="carousel-name"><span class="carousel-name-title">Maria</span>,
-                                    Boss</small>
-                            </div>
-                        </div>
-
-                        <div class="carousel-item">
-                            <div class="carousel-caption">
-                                <h4 class="carousel-title">Sed leo nisl, posuere at molestie ac, suscipit auctor
-                                    mauris quis metus tempor orci</h4>
-
-                                <small class="carousel-name"><span class="carousel-name-title">Thomas</span>,
-                                    Partner</small>
-                            </div>
-                        </div>
-
-                        <div class="carousel-item">
-                            <div class="carousel-caption">
-                                <h4 class="carousel-title">Lorem Ipsum dolor sit amet, consectetur adipsicing
-                                    kengan omeg kohm tokito charity theme</h4>
-
-                                <small class="carousel-name"><span class="carousel-name-title">Jane</span>,
-                                    Advisor</small>
-                            </div>
-                        </div>
-
-                        <div class="carousel-item">
-                            <div class="carousel-caption">
-                                <h4 class="carousel-title">Sed leo nisl, posuere at molestie ac, suscipit auctor
-                                    mauris quis metus tempor orci</h4>
-
-                                <small class="carousel-name"><span class="carousel-name-title">Bob</span>,
-                                    Entreprenuer</small>
-                            </div>
-                        </div>
-
-                        <ol class="carousel-indicators">
-                            <li data-bs-target="#testimonial-carousel" data-bs-slide-to="0" class="active">
-                                <img src="<?= base_url() ?>assets/guest/images/avatar/portrait-beautiful-young-woman-standing-grey-wall.jpg" class="img-fluid rounded-circle avatar-image" alt="avatar">
-                            </li>
-
-                            <li data-bs-target="#testimonial-carousel" data-bs-slide-to="1" class="">
-                                <img src="<?= base_url() ?>assets/guest/images/avatar/portrait-young-redhead-bearded-male.jpg" class="img-fluid rounded-circle avatar-image" alt="avatar">
-                            </li>
-
-                            <li data-bs-target="#testimonial-carousel" data-bs-slide-to="2" class="">
-                                <img src="<?= base_url() ?>assets/guest/images/avatar/pretty-blonde-woman-wearing-white-t-shirt.jpg" class="img-fluid rounded-circle avatar-image" alt="avatar">
-                            </li>
-
-                            <li data-bs-target="#testimonial-carousel" data-bs-slide-to="3" class="">
-                                <img src="<?= base_url() ?>assets/guest/images/avatar/studio-portrait-emotional-happy-funny.jpg" class="img-fluid rounded-circle avatar-image" alt="avatar">
-                            </li>
-                        </ol>
-
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-
-<section class="contact-section section-padding" id="section_6">
-    <div class="container">
-        <div class="row">
-
-            <div class="col-lg-4 col-12 ms-auto mb-5 mb-lg-0">
-                <div class="contact-info-wrap">
-                    <h2>Get in touch</h2>
-
-                    <div class="contact-image-wrap d-flex flex-wrap">
-                        <img src="<?= base_url() ?>assets/guest/images/avatar/pretty-blonde-woman-wearing-white-t-shirt.jpg" class="img-fluid avatar-image" alt="">
-
-                        <div class="d-flex flex-column justify-content-center ms-3">
-                            <p class="mb-0">Clara Barton</p>
-                            <p class="mb-0"><strong>HR & Office Manager</strong></p>
-                        </div>
-                    </div>
-
-                    <div class="contact-info">
-                        <h5 class="mb-3">Contact Infomation</h5>
-
-                        <p class="d-flex mb-2">
-                            <i class="bi-geo-alt me-2"></i>
-                            Akershusstranda 20, 0150 Oslo, Norway
-                        </p>
-
-                        <p class="d-flex mb-2">
-                            <i class="bi-telephone me-2"></i>
-
-                            <a href="tel: 305-240-9671">
-                                305-240-9671
-                            </a>
-                        </p>
-
-                        <p class="d-flex">
-                            <i class="bi-envelope me-2"></i>
-
-                            <a href="mailto:info@yourgmail.com">
-                                donate@charity.org
-                            </a>
-                        </p>
-
-                        <a href="#" class="custom-btn btn mt-3">Get Direction</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-5 col-12 mx-auto">
-                <form class="custom-form contact-form" action="#" method="post" role="form">
-                    <h2>Contact form</h2>
-
-                    <p class="mb-4">Or, you can just send an email:
-                        <a href="#">info@charity.org</a>
-                    </p>
-                    <div class="row">
-                        <div class="col-lg-6 col-md-6 col-12">
-                            <input type="text" name="first-name" id="first-name" class="form-control" placeholder="Jack" required>
-                        </div>
-
-                        <div class="col-lg-6 col-md-6 col-12">
-                            <input type="text" name="last-name" id="last-name" class="form-control" placeholder="Doe" required>
-                        </div>
-                    </div>
-
-                    <input type="email" name="email" id="email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Jackdoe@gmail.com" required>
-
-                    <textarea name="message" rows="5" class="form-control" id="message" placeholder="What can we help you?"></textarea>
-
-                    <button type="submit" class="form-control">Send Message</button>
-                </form>
             </div>
 
         </div>

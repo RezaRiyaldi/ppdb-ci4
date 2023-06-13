@@ -15,15 +15,43 @@ class FormModel extends Model
     protected $protectFields    = true;
     protected $allowedFields    = [
         'form_status_id',
-        'form_fullname',
         'form_no_register',
-        'form_gender',
+        'no_induk_siswa',
+
+        // Biodata
+        'form_fullname',
+        'form_callname',
+        'form_agama',
+        'form_gender', // L, P
+        'form_tempat_lahir',
         'form_tanggal_lahir',
-        'form_ktp',
-        'form_telp',
         'form_alamat',
+        'form_jenis_alamat', // ortu, numpang, asrama
+
+        // Orang Tua
+        'form_wali',
+        'form_orang_tua',
+        'form_pendidikan_orang_tua',
+        'form_pekerjaan_jabatan',
+        'form_hubungan_anak',
+        'form_telp',
+
+        // Asal Usul
+        'form_as', // baru, pindahan
+        'form_from', // rt, tk
+        'form_asal_sekolah',
+        'form_tanggal_pindah',
+        'form_dari_kelas',
+        
+        // TK
+        'form_tk',
+        'form_tahun_tk',
+        'form_lama_tk',
+
+        // Nothing
         'created_at',
         'updated_at',
+        'accepted_at',
         'user_id',
     ];
 

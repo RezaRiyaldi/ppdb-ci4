@@ -57,13 +57,13 @@
             <!-- Navbar End -->
 
 
-            <!-- Sale & Revenue Start -->
+            <!-- Content Start -->
             <div class="container-fluid pt-4 px-4">
                 <h2><?= $title ?></h2>
                 <hr>
                 <?= $this->renderSection('content'); ?>
             </div>
-            <!-- Sale & Revenue End -->
+            <!-- Content End -->
         </div>
         <!-- Content End -->
 
