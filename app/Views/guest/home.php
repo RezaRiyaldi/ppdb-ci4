@@ -8,66 +8,72 @@
             <div class="col-lg-12 col-12 p-0">
                 <div id="hero-slide" class="carousel carousel-fade slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="https://scontent.fcgk18-2.fna.fbcdn.net/v/t39.30808-6/297429806_383974687185406_4711487262776025961_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=5cd70e&_nc_ohc=pGolojP0XTIAX8IdOyI&_nc_ht=scontent.fcgk18-2.fna&oh=00_AfAFwODtcs9kb2bB2UmYZP41O9gLEsUpAjp2ytLzN30Npg&oe=648A7BE2" class="carousel-image img-fluid" alt="...">
+                        <div class="carousel-item active d-flex align-items-center" style="min-height: 650px !important; height: 650px !important; overflow: hidden;">
+                            <!-- <div class="bg-primary w-100 vh-100"></div> -->
+                            <img src="<?= base_url() ?>assets/guest/images/slide/penus1.jpg" alt="" style="width: 100%;">
                         </div>
 
-                        <div class="carousel-item">
-                            <img src="https://scontent.fcgk18-2.fna.fbcdn.net/v/t39.30808-6/297253019_383974607185414_3125001539470235245_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=5cd70e&_nc_ohc=EwdF8IRTXp8AX_FoNbb&_nc_ht=scontent.fcgk18-2.fna&oh=00_AfCnff9Lgy7IHA69rI3erkqM8HYAWtUdb1rJ6Cirgpp56Q&oe=648A183E" alt="...">
-                        </div>
+                        <!-- <div class="carousel-item"> -->
+                        <!-- <div class="bg-danger w-100 vh-100"> -->
+                        <!-- </div> -->
+                        <!-- <img src="https://scontent.fcgk18-2.fna.fbcdn.net/v/t39.30808-6/297253019_383974607185414_3125001539470235245_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=5cd70e&_nc_ohc=EwdF8IRTXp8AX_FoNbb&_nc_ht=scontent.fcgk18-2.fna&oh=00_AfCnff9Lgy7IHA69rI3erkqM8HYAWtUdb1rJ6Cirgpp56Q&oe=648A183E" alt="..."> -->
                     </div>
-
-                    <button class="carousel-control-prev" type="button" data-bs-target="#hero-slide" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-
-                    <button class="carousel-control-next" type="button" data-bs-target="#hero-slide" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
                 </div>
-            </div>
 
+                <button class="carousel-control-prev" type="button" data-bs-target="#hero-slide" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+
+                <button class="carousel-control-next" type="button" data-bs-target="#hero-slide" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
         </div>
+
+    </div>
     </div>
 </section>
 
 
 <section class="section-bg section-padding" id="section_2">
     <div class="container">
-        <div class="row">
+        <h2>Siswa Terpilih</h2>
+        <p>Selamat bergabung kepada semua siswa/i yang sudah terpilih pada kami. Sukses selalu bersama kami.</p>
 
-            <div class="col-lg-6 col-md-5 col-12">
-                <img src="<?= base_url() ?>assets/guest/images/avatar/kepsek.jpeg" class="about-image ms-lg-auto bg-light shadow-lg img-fluid" alt="">
-            </div>
+        <div class="table-responsive">
+            <table class="table table-hover table-bordered table-striped" id="siswa-acc">
+                <thead>
+                    <tr class="bg-success text-white">
+                        <th>No</th>
+                        <th>No. Induk Siswa</th>
+                        <th>No. Registrasi</th>
+                        <th>Nama Lengkap</th>
+                        <th>Jenis Kelamin</th>
+                        <th>Nama Wali</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    $no = 1;
+                    foreach ($list_siswa as $siswa) :
+                        $orangTua = json_decode($siswa->form_orang_tua, true);
+                        $ayah = isset($orangTua['ayah']) ? $orangTua['ayah'] : null;
 
-            <div class="col-lg-5 col-md-7 col-12">
-                <div class="custom-text-block">
-                    <h3 class="mb-0 text-success">Mida Puspita Sari S.Pd.</h3>
-
-                    <p class="text-muted mb-lg-4 mb-md-4">Kepala Sekolah</p>
-
-                    <p>Selamat datang, calon siswa! Kami dengan senang hati menyambut kehadiran kalian di sekolah kami.</p>
-
-                    <p>Mari kita bersama-sama menjalani perjalanan pendidikan yang bermakna dan penuh prestasi. Selamat bergabung!</p>
-
-                    <ul class="social-icon mt-4">
-                        <li class="social-icon-item">
-                            <a href="#" class="social-icon-link bi-twitter"></a>
-                        </li>
-
-                        <li class="social-icon-item">
-                            <a href="#" class="social-icon-link bi-facebook"></a>
-                        </li>
-
-                        <li class="social-icon-item">
-                            <a href="#" class="social-icon-link bi-instagram"></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
+                        $wali = $siswa->form_wali ?? ($ayah ?? "-");
+                    ?>
+                        <tr>
+                            <td class="text-center"><?= $no++ ?></td>
+                            <td><?= $siswa->no_induk_siswa ?></td>
+                            <td><?= $siswa->form_no_register ?></td>
+                            <td><?= $siswa->form_fullname ?></td>
+                            <td class="text-center"><?= $siswa->form_gender ?></td>
+                            <td><?= ucwords(strtolower($wali)) ?></td>
+                        </tr>
+                    <?php endforeach ?>
+                </tbody>
+            </table>
         </div>
     </div>
 </section>
@@ -85,7 +91,8 @@
                 <div class="card">
                     <div class="card-body">
                         <h3 class="featured-block-text mb-3 fw-bold" style="font-size: 2em;">Visi</h3>
-                        <p class="featured-block-text" style="font-size: 1.2em;">Terwujudnya Peserta Didik yang Berprestasi Beriman dan Berbudi Pekerti</p>
+                        <p class="featured-block-text" style="font-size: 1.2em;">Wadah pembinaan adab peserta didik, Wadah informasi ilmu pengetahuan & Keterampilan, Wadah pelaksanaan budaya.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -95,14 +102,12 @@
                     <div class="card-body">
                         <h3 class="featured-block-text mb-3 fw-bold" style="font-size: 2em;">Misi</h3>
                         <ol class="featured-block-text" style="font-size: 1.2em;">
-                            <li>Menanamkan karakter Religius melalui kebiasaan.</li>
-                            <li>Menanamkan Perilaku Jujur, Displin, dan Bertanggung Jawab.</li>
-                            <li>Mengoptimalkan Pengelolaan Lingkungan Hidup.</li>
-                            <li>Memanfaatkan Program Extrakurikuler dalam Pengembangan Bakat, Minat, dan Kemampuan Siswa.</li>
-                            <li>Mengembangkan Pendidikan Kepramukaaan.</li>
+                            <li>Menjadikan islam sebagai pondasi dasar membentuk karakter siswa.</li>
+                            <li>Menjunjung tinggi nilai-nilai kesantunan & moral.</li>
+                            <li>Mengembangkan kurikulum sekolah berbasis HASIL.</li>
+                            <li>Membekali peserta didik ilmu pengetahuan, keterampilan & ibadah.</li>
+                            <li>Melaksanakan budaya/kebiasaan di sekolah yang mendukung pembentukan karakter.</li>
                             <li>Meningkatkan Profesionalisme Guru melalui Pendidikan Formal dan PKB.</li>
-                            <li>Mengoptimalkan Peran Komite Sekolah dan Pengurus Kelas dalam berbagai Kegiatan Sekolah.</li>
-                            <li>Menjalin Kerjasama yang Harmonis antar Sekolah dan Lingkungan Masyarakat.</li>
                         </ol>
                     </div>
                 </div>
@@ -146,7 +151,7 @@
                         <div class="custom-block-body">
                             <h5 class="mb-3">Pramuka</h5>
 
-                            <p>Ekskul Pramuka adalah kegiatan luar kelas yang mengajarkan keterampilan, kejujuran, kerjasama, dan keberanian kepada calon murid SD.</p>
+                            <p>Ekskul Pramuka adalah kegiatan luar kelas yang mengajarkan keterampilan, kejujuran, kerjasama, dan keberanian.</p>
                         </div>
                     </div>
                 </div>
@@ -160,7 +165,7 @@
                         <div class="custom-block-body">
                             <h5 class="mb-3">Futsal</h5>
 
-                            <p>Ekskul futsal adalah kegiatan olahraga sepak bola dalam ruangan yang mengajarkan teknik, strategi, dan teamwork kepada calon murid SD.</p>
+                            <p>Ekskul futsal adalah kegiatan olahraga sepak bola dalam ruangan yang mengajarkan teknik, strategi, dan team work.</p>
                         </div>
                     </div>
                 </div>
@@ -168,13 +173,13 @@
 
             <div class="col-lg-4 col-md-6 col-12">
                 <div class="custom-block-wrap">
-                    <img src="https://images.unsplash.com/photo-1609329007778-42630e6b1580?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" class="custom-block-image img-fluid" alt="">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhxJ5KNX7u1AzVACIFIOd7lqmNCIRhPD766Hm1MWM4e8-L-E5a0wtTFlGu1TcmrvKCNEdD1R6uANDRLOklZfRFsA9rXOPM_io9vxdQlZcya0nJI7kKh25wkcTdlPf2Yk9gw0N_cVy8AiVo/s320/552437_518684424827855_474719606_n.jpg" alt="" style="width: 480px; height: 278px;">
 
                     <div class="custom-block">
                         <div class="custom-block-body">
-                            <h5 class="mb-3">Tari Tradisional</h5>
+                            <h5 class="mb-3">Drumband</h5>
 
-                            <p>Ekskul tari adalah belajar gerak tubuh, ekspresi, koordinasi, kreativitas, dan menghargai keanekaragaman budaya.</p>
+                            <p>Ekskul Drumband adalah kegiatan luar kelas yang mengajarkan siswa tentang , ekspresi, koordinasi, kreativitas tentang bermain musik, gerakan dan konsep pertunjukan musik.</p>
                         </div>
                     </div>
                 </div>
@@ -184,3 +189,9 @@
     </div>
 </section>
 <?= $this->endSection('content'); ?>
+
+<?= $this->section('script'); ?>
+<script>
+    $("#siswa-acc").DataTable()
+</script>
+<?= $this->endSection('script'); ?>

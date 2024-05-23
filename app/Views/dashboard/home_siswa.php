@@ -154,8 +154,7 @@
                                 <div class="input-group">
                                     <span class="input-group-text"><i class="fas fa-chalkboard-teacher"></i></span>
                                     <select name="form_from" id="formFrom" class="form-select" onchange="changeFrom()">
-                                        <option value="rt" <?= isset($form->form_from) && $form->form_from == "rt" ? "selected" : "" ?>>Rumah Tangga (Tidak TK)</option>
-                                        <option value="tk" <?= isset($form->form_from) && $form->form_from == "tk" ? "selected" : "" ?>>Taman Kanak - Kanak</option>
+                                        <option value="sd" <?= isset($form->form_from) && $form->form_from == "sd" ? "selected" : "" ?>>Sekolah Dasar</option>
                                     </select>
                                 </div>
                             </div>
@@ -182,12 +181,9 @@
                                 <div class="input-group">
                                     <span class="input-group-text"><i class="fas fa-school"></i></span>
                                     <select name="form_dari_kelas" id="" class="form-select">
-                                        <option value="1" <?= $form->form_dari_kelas == 1 ? "selected" : "" ?>>Kelas 1</option>
-                                        <option value="2" <?= $form->form_dari_kelas == 2 ? "selected" : "" ?>>Kelas 2</option>
-                                        <option value="3" <?= $form->form_dari_kelas == 3 ? "selected" : "" ?>>Kelas 3</option>
-                                        <option value="4" <?= $form->form_dari_kelas == 4 ? "selected" : "" ?>>Kelas 4</option>
-                                        <option value="5" <?= $form->form_dari_kelas == 5 ? "selected" : "" ?>>Kelas 5</option>
-                                        <option value="6" <?= $form->form_dari_kelas == 6 ? "selected" : "" ?>>Kelas 6</option>
+                                        <option value="7" <?= $form->form_dari_kelas == 7 ? "selected" : "" ?>>Kelas 7</option>
+                                        <option value="8" <?= $form->form_dari_kelas == 8 ? "selected" : "" ?>>Kelas 8</option>
+                                        <option value="9" <?= $form->form_dari_kelas == 9 ? "selected" : "" ?>>Kelas 9</option>
                                     </select>
                                 </div>
                             </div>
@@ -195,24 +191,24 @@
 
                         <div id="containerTk" class="row">
                             <div class="col-md-4 mb-3">
-                                <label for="" class="form-label">Asal TK</label>
+                                <label for="" class="form-label">Asal SD</label>
                                 <div class="input-group">
                                     <span class="input-group-text"><i class="fas fa-shapes"></i></span>
-                                    <input type="text" class="form-control" name="form_tk" value="<?= $form->form_tk ?>" placeholder="Taman Kanak - Kanak">
+                                    <input type="text" class="form-control" name="form_tk" value="<?= $form->form_tk ?>" placeholder="Sekolah Dasar">
                                 </div>
                             </div>
                             <div class="col-md-4 mb-3">
                                 <label for="" class="form-label">Tahun Lulus</label>
                                 <div class="input-group">
                                     <span class="input-group-text"><i class="fas fa-shapes"></i></span>
-                                    <input type="number" class="form-control" name="form_tahun_tk" value="<?= $form->form_tahun_tk ?>" placeholder="Tahun Lulus Taman Kanak - Kanak">
+                                    <input type="number" class="form-control" name="form_tahun_tk" value="<?= $form->form_tahun_tk ?>" placeholder="Tahun Lulus Sekolah Dasar">
                                 </div>
                             </div>
                             <div class="col-md-4 mb-3">
-                                <label for="" class="form-label">Lama TK (Tahun)</label>
+                                <label for="" class="form-label">Lama SD (Tahun)</label>
                                 <div class="input-group">
                                     <span class="input-group-text"><i class="fas fa-shapes"></i></span>
-                                    <input type="number" class="form-control" name="form_lama_tk" value="<?= $form->form_lama_tk ?>" placeholder="Lama Taman Kanak - Kanak">
+                                    <input type="number" class="form-control" name="form_lama_tk" value="<?= $form->form_lama_tk ?>" placeholder="Lama Sekolah Dasar">
                                 </div>
                             </div>
                         </div>
@@ -262,48 +258,33 @@
             </div>
         </div>
 
-        <div class="card border-danger mt-3" style="background-color: #fff6db;">
-            <div class="card-body">
-                <h2 class="text-center border-bottom mb-3"><i class="fas fa-exclamation-triangle text-warning"></i> PENTING <i class="fas fa-exclamation-triangle text-warning"></i></h2>
-                <p style="text-align: justify; text-indent: 30px; margin-bottom: 5px;">Berhubungan dengan sudah diterimanya siswa dengan biodata diatas, kami harap anda mengumpulkan berkas berikut:</p>
-                <ol>
-                    <li>Fotokopi Akta Kelahiran</li>
-                    <li>Fotokopi Kartu Keluarga (KK)</li>
-                    <li>Fotokopi KTP Orang Tua / Wali</li>
-                    <li>
-                        Pas Foto:
-                        <ul>
-                            <li>Laki - laki: Background <span style="background-color: blue; color: white; border-radius: 3px; padding: 0 2px;">Biru</span></li>
-                            <li>Perempuan: Background <span style="background-color: red; color: white; border-radius: 3px; padding: 0 2px;">Merah</span></li>
-                            <li>2 x 3: 2 Lembar</li>
-                            <li>3 x 4: 2 Lembar</li>
-                            <li>4 x 6: 2 Lembar</li>
-                        </ul>
-                    </li>
-                </ol>
-                <p style="text-align: justify; text-indent: 30px; margin-bottom: 5px;">Pastikan untuk melengkapi semua berkas tersebut sebelum batas waktu pengumpulan daftar ulang. Jika ada pertanyaan lebih lanjut, silakan hubungi panitia pendaftaran.</p>
+        <?php if ($form->form_status_id == 2) : ?>
+            <div class="card border-danger mt-3" style="background-color: #fff6db;">
+                <div class="card-body">
+                    <h2 class="text-center border-bottom mb-3"><i class="fas fa-exclamation-triangle text-warning"></i> PENTING <i class="fas fa-exclamation-triangle text-warning"></i></h2>
+                    <p style="text-align: justify; text-indent: 30px; margin-bottom: 5px;">Berhubungan dengan sudah diterimanya siswa dengan biodata diatas, kami harap anda mengumpulkan berkas berikut:</p>
+                    <ol>
+                        <li>Fotokopi Akta Kelahiran</li>
+                        <li>Fotokopi Ijazah Sekolah</li>
+                        <li>Fotokopi KTP Orang Tua / Wali</li>
+                        <li>
+                            Pas Foto:
+                            <ul>
+                                <li>Laki - laki: Background <span style="background-color: blue; color: white; border-radius: 3px; padding: 0 2px;">Biru</span></li>
+                                <li>Perempuan: Background <span style="background-color: red; color: white; border-radius: 3px; padding: 0 2px;">Merah</span></li>
+                                <li>2 x 3: 2 Lembar</li>
+                                <li>3 x 4: 2 Lembar</li>
+                                <li>4 x 6: 2 Lembar</li>
+                            </ul>
+                        </li>
+                    </ol>
+                    <p style="text-align: justify; text-indent: 30px; margin-bottom: 5px;">Pastikan untuk melengkapi semua berkas tersebut sebelum batas waktu pengumpulan daftar ulang. Jika ada pertanyaan lebih lanjut, silakan hubungi panitia pendaftaran.</p>
+                </div>
             </div>
-        </div>
+        <?php endif ?>
     </div>
 </div>
-<div class="site-footer-bottom bg-light my-3 p-3" style="border-radius: 10px; box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;;">
-    <div class="container">
-        <div class="row">
 
-            <div class="col-lg-6 col-md-7 col-12">
-                <p class="copyright-text mb-0">Copyright &copy; 2023
-                    Design: <a href="https://zagojo.space" target="_blank">Zagojo Space</a>
-                    <br>Distribution: <a href="https://instagram.com/boykucayy" target="_blank">Reza Riyaldi Irawan</a>
-                </p>
-            </div>
-
-            <div class="col-lg-6 col-md-5 col-12 d-flex justify-content-center align-items-center mx-auto">
-                <a href="https://www.facebook.com/groups/844404708922829/?ref=share&mibextid=KtfwRi" class="fab fa-facebook-square" style="font-size: 24px;"></a>
-            </div>
-
-        </div>
-    </div>
-</div>
 <?= $this->endSection('content'); ?>
 
 
@@ -352,7 +333,7 @@
             pindahan.toggleClass('d-none', formAs !== "pindahan");
             asal.toggleClass('d-none', formAs !== "pindahan");
             baru.toggleClass('d-none', formAs !== "baru");
-            tk.toggleClass('d-none', formAs !== "baru" || formFrom !== "tk");
+            tk.toggleClass('d-none', formAs !== "baru" || formFrom !== "sd");
 
         }
 

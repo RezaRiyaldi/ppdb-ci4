@@ -1,16 +1,17 @@
-<header class="site-header">
+
+<header class="site-header" style="background-color: #436DEC;">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-12 d-flex flex-wrap">
                 <p class="d-flex me-4 mb-0">
                     <i class="bi-geo-alt me-2"></i>
-                    Kp. Sempu, Pasirgombong, Kec. Cikarang Utara, Kab. Bekasi
+                    Dusun. Teluk Ampel, Desa Karya Makmur, Kec. Batujaya, Kab. Karawang
                 </p>
 
                 <p class="d-flex mb-0">
                     <i class="bi-envelope me-2"></i>
-                    <a href="mailto:sdn_pasirgombong02@yahoo.com">
-                        sdn_pasirgombong02@yahoo.com
+                    <a href="mailto:SMP PELITA NUSANTARA@yahoo.com">
+                        SMP PELITA NUSANTARA
                     </a>
                 </p>
             </div>
@@ -21,9 +22,9 @@
                             <a href="#" class="social-icon-link bi-twitter"></a>
                         </li> -->
 
-                    <li class="social-icon-item">
-                        <a href="https://www.facebook.com/groups/844404708922829/?ref=share&mibextid=KtfwRi" target="_blank" class="social-icon-link bi-facebook"></a>
-                    </li>
+                    <!-- <li class="social-icon-item"> -->
+                        <!-- <a href="https://www.facebook.com/groups/844404708922829/?ref=share&mibextid=KtfwRi" target="_blank" class="social-icon-link bi-facebook"></a> -->
+                    <!-- </li> -->
 
                     <!-- <li class="social-icon-item">
                             <a href="#" class="social-icon-link bi-instagram"></a>
@@ -43,13 +44,13 @@
     </div>
 </header>
 
-<nav class="navbar navbar-expand-lg bg-light shadow-lg">
+<nav class="navbar navbar-expand-lg bg-blue shadow-lg">
     <div class="container">
         <a class="navbar-brand" href="index.html">
-            <img src="<?= base_url() ?>assets/guest/images/icons/logo.jpeg" class="logo img-fluid" alt="Kind Heart Charity">
+            <img src="<?= base_url() ?>assets/guest/images/penuss.jpg" class="logo img-fluid" alt="Kind Heart Charity">
             <span>
-                Pasir Gombong 2
-                <small>Sekolah Dasar Negeri</small>
+                PELITA NUSANTARA
+                <small>Sekolah Menengah Pertama</small>
             </span>
         </a>
 
@@ -64,7 +65,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="<?= base_url() ?>#section_2">Sambutan</a>
+                    <a class="nav-link" href="<?= base_url() ?>#section_2">Pengumuman</a>
                 </li>
 
                 <li class="nav-item">
@@ -74,12 +75,13 @@
                 <li class="nav-item">
                     <a class="nav-link" href="<?= base_url() ?>#section_4">Ekstrakurikuler</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?= base_url() ?>register">Pendaftaran</a>
+                </li>
 
                 <?php if (empty(session()->get('user'))) : ?>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url() ?>register">Pendaftaran</a>
-                    </li>
+                
 
                     <li class="nav-item ms-3">
                         <a class="nav-link custom-btn custom-border-btn btn" href="<?= base_url() ?>login">Login</a>

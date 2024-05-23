@@ -27,10 +27,10 @@
                 </thead>
                 <tbody>
                     <?php
-                    if (count($forms) > 1) :
+                    if (count($forms) > 0) :
                         $no = 1;
                         foreach ($forms as $form) :
-                            if ($form->form_status_id == 1) :
+                            if (in_array($form->form_status_id, [1, 3])) :
                     ?>
                                 <tr>
                                     <td class="align-middle"><?= $no++ ?></td>
@@ -76,7 +76,7 @@
                 </thead>
                 <tbody>
                     <?php
-                    if (count($forms) > 1) :
+                    if (count($forms) > 0) :
                         $no = 1;
                         foreach ($forms as $form) :
                             if ($form->form_status_id == 2) :

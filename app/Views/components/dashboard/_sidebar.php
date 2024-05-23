@@ -5,10 +5,10 @@ $uri = service('uri')->getSegment(1);
 <div class="sidebar pe-4 pb-3">
     <nav class="navbar bg-light navbar-light">
         <a href="index.html" class="navbar-brand mx-4 mb-3 d-flex gap-2">
-            <h1 class="text-primary">02</h1>
+        <img src="<?= base_url() ?>assets/guest/images/penuss.jpg" width="50px" height="100%" class="logo img-fluid" alt="Kind Heart Charity">
             <div>
-                <h5 class="text-warning m-0">SDN</h5>
-                <p class="m-0" style="font-size: .8em;">Pasir Gombong</p>
+                <h5 class="m-0" style="color:#2D75FB;">SMP</h5>
+                <p class="m-0" style="font-size: .8em;">PELITA NUSANTARA</p>
             </div>
         </a>
         <div class="d-flex align-items-center ms-4 mb-4">
@@ -32,9 +32,9 @@ $uri = service('uri')->getSegment(1);
                 </div>
             </div> -->
             <?php if ($user->role == "Admin"):  ?>
-                <a href="<?= base_url() ?>users" class="nav-item nav-link <?= $uri == "users" ? "active" : "" ?>"><i class="fa fa-users me-2"></i>Users</a>
-                <a href="<?= base_url() ?>forms" class="nav-item nav-link <?= $uri == "forms" ? "active" : "" ?>"><i class="fa fa-file me-2"></i>Forms</a>
-                <a href="<?= base_url() ?>students" class="nav-item nav-link <?= $uri == "students" ? "active" : "" ?>"><i class="fas fa-user-graduate me-2"></i></i>Students</a>
+                <a href="<?= base_url() ?>users" class="nav-item nav-link <?= $uri == "users" ? "active" : "" ?>"><i class="fa fa-users me-2"></i>Pengguna</a>
+                <a href="<?= base_url() ?>forms" class="nav-item nav-link <?= $uri == "forms" ? "active" : "" ?>"><i class="fa fa-address-card me-2"></i>Calon Siswa</a>
+                <a href="<?= base_url() ?>students" class="nav-item nav-link <?= $uri == "students" ? "active" : "" ?>"><i class="fas fa-file me-2"></i></i>Laporan</a>
             <?php endif ?>
         </div>
     </nav>

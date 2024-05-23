@@ -45,7 +45,7 @@
                             <i class="fas fa-user-graduate"></i>
                         </div>
                         <div>
-                            <h4 class="m-0">Student</h4>
+                            <h4 class="m-0">Laporan</h4>
                             <p class="m-0"><?= $jumlah_siswa ?></p>
                         </div>
                     </div>
@@ -62,7 +62,7 @@
                             <i class="bi-people-fill"></i>
                         </div>
                         <div>
-                            <h4 class="m-0">Users</h4>
+                            <h4 class="m-0">Pengguna</h4>
                             <p class="m-0"><?= $jumlah_user ?></p>
                         </div>
                     </div>
@@ -96,7 +96,7 @@
                             <i class="fas fa-user"></i>
                         </div>
                         <div>
-                            <h4 class="m-0">Guest</h4>
+                            <h4 class="m-0">Siswa</h4>
                             <p class="m-0"><?= $jumlah_pendaftar ?></p>
                         </div>
                     </div>

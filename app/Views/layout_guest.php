@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SDN | <?= $title ?></title>
+    <title>SMP Pelita Nusantara | <?= $title ?></title>
 
     <!-- CSS FILES -->
     <link href="<?= base_url() ?>assets/guest/css/bootstrap.min.css" rel="stylesheet">
@@ -16,6 +16,10 @@
     <link href="<?= base_url() ?>assets/guest/css/bootstrap-icons.css" rel="stylesheet">
 
     <link href="<?= base_url() ?>assets/guest/css/templatemo-kind-heart-charity.css" rel="stylesheet">
+
+    <link rel="shortcut icon" href="<?= base_url() ?>assets/guest/images/penuss.jpg" type="image/x-icon">
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.3/css/dataTables.bootstrap5.css">
     <style>
         .my-text {
             color: var(--primary-color);
@@ -53,6 +57,11 @@
     <script src="<?= base_url() ?>assets/guest/js/click-scroll.js"></script>
     <script src="<?= base_url() ?>assets/guest/js/counter.js"></script>
     <script src="<?= base_url() ?>assets/guest/js/custom.js"></script>
+
+    <script src="https://cdn.datatables.net/2.0.3/js/dataTables.js"></script>
+    <script src="https://cdn.datatables.net/2.0.3/js/dataTables.bootstrap5.js"></script>
+
+    <?= $this->renderSection('script'); ?>
 
 </body>
 

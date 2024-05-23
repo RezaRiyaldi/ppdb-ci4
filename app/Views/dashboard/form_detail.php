@@ -8,10 +8,10 @@
 
         <?php if ($form->form_status_id == 1) : ?>
             <div class="my-auto">
-                <a href="<?= base_url() ?>forms/acc/<?= $form->user_id ?>" class="btn btn-success" data-bs-toggle="tooltip" data-bs-placement="top" title="Setujui Formulir">
+                <a href="<?= base_url() ?>forms/acc/<?= $form->id ?>" class="btn btn-success" data-bs-toggle="tooltip" data-bs-placement="top" title="Setujui Formulir">
                     <i class="fas fa-check"></i> Setujui
                 </a>
-                <a href="<?= base_url() ?>forms/acc/<?= $form->user_id ?>" class="btn btn-danger" data-bs-toggle="tooltip" data-bs-placement="top" title="Setujui Formulir">
+                <a href="<?= base_url() ?>forms/decline/<?= $form->id ?>" class="btn btn-danger" data-bs-toggle="tooltip" data-bs-placement="top" title="Tolak Formulir">
                     <i class="fas fa-times"></i> Tolak
                 </a>
             </div>
@@ -21,7 +21,7 @@
 
     </div>
     <div class="card-body">
-        <form action="<?= base_url() ?>forms/edit/<?= $form->user_id ?>" method="post">
+        <form action="<?= base_url() ?>forms/edit/<?= $form->id ?>" method="post">
             <?= csrf_field() ?>
             <fieldset>
                 <legend>Biodata Calon Siswa</legend>
@@ -94,8 +94,8 @@
                             <span class="input-group-text"><i class="fas fa-map-marked-alt"></i></span>
                             <select name="jenis_alamat" id="" class="form-select">
                                 <option value="ortu" <?= isset($form->form_jenis_alamat) && $form->form_jenis_alamat == "ortu" ? "selected" : "" ?>>Orang Tua</option>
-                                <option value="numpang" <?= isset($form->form_jenis_alamat) && $form->form_jenis_alamat == "numpang" ? "selected" : "" ?>>Numpang</option>
-                                <option value="asrama" <?= isset($form->form_jenis_alamat) && $form->form_jenis_alamat == "asrama" ? "selected" : "" ?>>Asrama</option>
+                                <option value="numpang" <?= isset($form->form_jenis_alamat) && $form->form_jenis_alamat == "numpang" ? "selected" : "" ?>>Wali Murid</option>
+                                <option value="asrama" <?= isset($form->form_jenis_alamat) && $form->form_jenis_alamat == "asrama" ? "selected" : "" ?>>Saudara</option>
                             </select>
                         </div>
                     </div>
@@ -165,8 +165,8 @@
                         <div class="input-group">
                             <span class="input-group-text"><i class="fas fa-chalkboard-teacher"></i></span>
                             <select name="form_from" id="formFrom" class="form-select" onchange="changeFrom()">
-                                <option value="rt" <?= isset($form->form_from) && $form->form_from == "rt" ? "selected" : "" ?>>Rumah Tangga (Tidak TK)</option>
-                                <option value="tk" <?= isset($form->form_from) && $form->form_from == "tk" ? "selected" : "" ?>>Taman Kanak - Kanak</option>
+                                <!-- <option value="rt" <?= isset($form->form_from) && $form->form_from == "rt" ? "selected" : "" ?>>Rumah Tangga (Tidak TK)</option> -->
+                                <option value="sd" <?= isset($form->form_from) && $form->form_from == "sd" ? "selected" : "" ?>>SD</option>
                             </select>
                         </div>
                     </div>
@@ -193,12 +193,12 @@
                         <div class="input-group">
                             <span class="input-group-text"><i class="fas fa-school"></i></span>
                             <select name="form_dari_kelas" id="" class="form-select">
-                                <option value="1" <?= $form->form_dari_kelas == 1 ? "selected" : "" ?>>Kelas 1</option>
-                                <option value="2" <?= $form->form_dari_kelas == 2 ? "selected" : "" ?>>Kelas 2</option>
-                                <option value="3" <?= $form->form_dari_kelas == 3 ? "selected" : "" ?>>Kelas 3</option>
-                                <option value="4" <?= $form->form_dari_kelas == 4 ? "selected" : "" ?>>Kelas 4</option>
+                                <option value="7" <?= $form->form_dari_kelas == 7 ? "selected" : "" ?>>Kelas 7</option>
+                                <option value="8" <?= $form->form_dari_kelas == 8 ? "selected" : "" ?>>Kelas 8</option>
+                                <option value="9" <?= $form->form_dari_kelas == 9 ? "selected" : "" ?>>Kelas 9</option>
+                                <!-- <option value="4" <?= $form->form_dari_kelas == 4 ? "selected" : "" ?>>Kelas 4</option>
                                 <option value="5" <?= $form->form_dari_kelas == 5 ? "selected" : "" ?>>Kelas 5</option>
-                                <option value="6" <?= $form->form_dari_kelas == 6 ? "selected" : "" ?>>Kelas 6</option>
+                                <option value="6" <?= $form->form_dari_kelas == 6 ? "selected" : "" ?>>Kelas 6</option> -->
                             </select>
                         </div>
                     </div>
@@ -206,24 +206,24 @@
 
                 <div id="containerTk" class="row">
                     <div class="col-md-4 mb-3">
-                        <label for="" class="form-label">Asal TK</label>
+                        <label for="" class="form-label">Asal SD</label>
                         <div class="input-group">
                             <span class="input-group-text"><i class="fas fa-shapes"></i></span>
-                            <input type="text" class="form-control" name="form_tk" value="<?= $form->form_tk ?>" placeholder="Taman Kanak - Kanak">
+                            <input type="text" class="form-control" name="form_tk" value="<?= $form->form_tk ?>" placeholder="Sekolah Dasar">
                         </div>
                     </div>
                     <div class="col-md-4 mb-3">
                         <label for="" class="form-label">Tahun Lulus</label>
                         <div class="input-group">
                             <span class="input-group-text"><i class="fas fa-shapes"></i></span>
-                            <input type="number" class="form-control" name="form_tahun_tk" value="<?= $form->form_tahun_tk ?>" placeholder="Tahun Lulus Taman Kanak - Kanak">
+                            <input type="number" class="form-control" name="form_tahun_tk" value="<?= $form->form_tahun_tk ?>" placeholder="Tahun Lulus Sekolah Dasar">
                         </div>
                     </div>
                     <div class="col-md-4 mb-3">
-                        <label for="" class="form-label">Lama TK (Tahun)</label>
+                        <label for="" class="form-label">Lama SD (Tahun)</label>
                         <div class="input-group">
                             <span class="input-group-text"><i class="fas fa-shapes"></i></span>
-                            <input type="number" class="form-control" name="form_lama_tk" value="<?= $form->form_lama_tk ?>" placeholder="Lama Taman Kanak - Kanak">
+                            <input type="number" class="form-control" name="form_lama_tk" value="<?= $form->form_lama_tk ?>" placeholder="Lama Sekolah Dasar">
                         </div>
                     </div>
                 </div>
@@ -274,7 +274,7 @@
         pindahan.toggleClass('d-none', formAs !== "pindahan");
         asal.toggleClass('d-none', formAs !== "pindahan");
         baru.toggleClass('d-none', formAs !== "baru");
-        tk.toggleClass('d-none', formAs !== "baru" || formFrom !== "tk");
+        tk.toggleClass('d-none', formAs !== "baru" || formFrom !== "sd");
     }
 
 

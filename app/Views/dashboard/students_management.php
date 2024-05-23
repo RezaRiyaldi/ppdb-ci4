@@ -3,8 +3,8 @@
 <?= $this->section('content') ?>
 <div class="card">
     <div class="card-header d-flex justify-content-between">
-        <h3 class="my-3">Daftar Siswa</h3>
-        <a href="<?= base_url() ?>students/export" class="btn btn-success my-auto"><i class="fas fa-download"></i> Daftar Siswa</a>
+        <h3 class="my-3">Nama Nama Siswa Yang Di Terima</h3>
+        <a href="<?= base_url() ?>students/export" class="btn btn-success my-auto"><i class="fas fa-download"></i> Cetak Laporan</a>
     </div>
     <div class="card-body">
         <!-- <input type="text" placeholder="Cari siswa.." class="form-control w-50 mb-3" id="cariSiswa"> -->

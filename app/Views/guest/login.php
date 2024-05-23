@@ -19,11 +19,11 @@
                         <?= csrf_field() ?>
                         <div class="input-group mb-3">
                             <span class="input-group-text" id="username"><i class="bi-person-circle"></i></span>
-                            <input type="text" class="form-control" name="username" placeholder="Username or Email" aria-label="Username" aria-describedby="username">
+                            <input type="text" class="form-control" required name="username" placeholder="Username or Email" aria-label="Username" aria-describedby="username" value="<?= old('username') ?>">
                         </div>
                         <div class="input-group mb-3">
                             <span class="input-group-text" id="password"><i class="bi-key"></i></span>
-                            <input type="password" class="form-control" name="password" placeholder="Password" aria-label="password" aria-describedby="password">
+                            <input type="password" required class="form-control" name="password" placeholder="Password" aria-label="password" aria-describedby="password">
                         </div>
                         <div class="d-flex align-items-center">
                             <button type="submit" class="w-50 btn btn-primary my-button">Login</button>

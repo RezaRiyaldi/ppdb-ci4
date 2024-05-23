@@ -32,13 +32,13 @@ class DashboardController extends BaseController
             $data['jumlah_user'] = $this->user->countAllResults();
             $data['jumlah_admin'] = $this->user->where('role_id', 1)->countAllResults();
             $data['jumlah_pendaftar'] = $this->user->where('role_id', 2)->countAllResults();
-            $data['jumlah_siswa'] = $this->user->join('forms f', 'f.user_id = users.user_id')
+            $data['jumlah_siswa'] = $this->user->join('forms f', 'f.user_id = users.id')
                 ->where('f.form_status_id', 2)
                 ->where('role_id', 2)->countAllResults();
             $data['form_unverif'] = $this->form->where('form_status_id', 1)->countAllResults();
             $data['form_verif'] = $this->form->where('form_status_id', 2)->countAllResults();
         } else {
-            $data['form'] = $this->form->where('user_id', $user->user_id)
+            $data['form'] = $this->form->where('user_id', $user->id)
                 ->join('form_status fs', 'fs.form_status_id = forms.form_status_id')
                 ->first();
             $data['orangtua'] = json_decode($data['form']->form_orang_tua);
@@ -156,7 +156,7 @@ class DashboardController extends BaseController
         }
 
         if ($getUser != NULL) {
-            $this->user->where('user_id', $id)->delete();
+            $this->user->where('id', $id)->delete();
             $type = "success";
             $message = "Berhasil hapus user";
         } else {
@@ -171,9 +171,30 @@ class DashboardController extends BaseController
         return redirect()->to('/users?tab=' . $tab)->with($type, $message);
     }
 
+    public function user_activate($id) {
+        $type = "";
+        $message = "";
+
+        $getUser = $this->user->find($id);
+
+        if ($getUser != NULL) {
+            $this->user->update($id, ['counter_login' => 0, 'is_banned' => 0]);
+            $type = "success";
+            $message = "Berhasil aktivasi user";
+        } else {
+            $type = "errors";
+            $message = "Gagal aktivasi user";
+        }
+        $tab = "";
+        if (isset($this->request->getGet()['tab'])) {
+            $tab = $this->request->getGet()['tab'];
+        }
+        return redirect()->to('/users?tab=' . $tab)->with($type, $message);
+    }
+
     public function forms_management()
     {
-        $data['title'] = "Formulir Siswa";
+        $data['title'] = "Siswa Yang Mendaftar";
         $data['get'] = $this->request->getGet();
         $data['forms'] = $this->form->join('form_status fs', 'fs.form_status_id = forms.form_status_id')->findAll();
 
@@ -213,13 +234,36 @@ class DashboardController extends BaseController
         return redirect()->route('forms')->with($type, $message);
     }
 
+    public function form_decline($id)
+    {
+        $type = "errors";
+        $message = "Something went wrong!";
+
+        $getForm = $this->form->where('id', $id)->first();
+        if ($getForm) {
+            $update = $this->form->update($getForm->form_id, [
+                'form_status_id' => 3,
+                // 'no_induk_siswa' => $this->create_nis(),
+                // 'accepted_at' => date('Y-m-d H:i:s')
+            ]);
+
+            if ($update) {
+                $type = "success";
+                $message = "Form atas nama " . $getForm->form_fullname . " berhasil ditolak";
+            }
+        } else {
+            $message = "Form tidak ditemukan!";
+        }
+        return redirect()->route('forms')->with($type, $message);
+    }
+
     public function create_nis()
     {
         $tanggal_masuk = date('y');
         $npsn = 18141; // 5 Digit dari 20218141
 
         $last_nis = $this->form->select('no_induk_siswa')->orderBy('no_induk_siswa', 'DESC')->first();
-        if ($last_nis) {
+        if (isset($last_nis->no_induk_siswa)) {
             $last_number = substr($last_nis->no_induk_siswa, -3);
             $new_number = str_pad($last_number + 1, 3, '0', STR_PAD_LEFT);
         } else {
@@ -296,7 +340,7 @@ class DashboardController extends BaseController
         }
         $countPerRows = 10;
 
-        $student = $this->user->join('forms f', 'f.user_id = users.user_id')
+        $student = $this->user->join('forms f', 'f.user_id = users.id')
             ->where('role_id', 2)
             ->where('f.form_status_id', 2)
             ->orderBy('f.accepted_at');
@@ -309,28 +353,12 @@ class DashboardController extends BaseController
         return view('dashboard/students_management', $data);
     }
 
-    // public function getStudentsAjax()
-    // {
-    //     $keyword = $this->request->getGet('keyword');
-    //     $student = $this->user->join('forms f', 'f.user_id = users.user_id')
-    //         ->where('role_id', 2)
-    //         ->where('f.form_status_id', 2)
-    //         ->groupStart()
-    //             ->like('f.no_induk_siswa', "$keyword", 'both')
-    //             ->orLike('f.form_fullname', "$keyword", 'both')
-    //         ->groupEnd()
-    //         ->findAll();
-
-
-    //     echo json_encode($student);
-    // }
-
     public function export_students()
     {
         $spreadsheet = new Spreadsheet();
         $sheet = $spreadsheet->getActiveSheet();
 
-        $data['students'] = $students = $this->user->join('forms f', 'f.user_id = users.user_id')
+        $data['students'] = $students = $this->user->join('forms f', 'f.user_id = users.id')
             ->where('role_id', 2)
             ->where('f.form_status_id', 2)
             ->orderBy('f.accepted_at')
@@ -350,9 +378,9 @@ class DashboardController extends BaseController
             'K' => 'Nama Ibu',
             'L' => 'No. Telp',
             'M' => 'Asal', // baru | Pindahan
-            'N' => 'Asal TK',
-            'O' => 'Tahun Lulus TK',
-            'P' => 'Lama TK (Tahun)',
+            'N' => 'Asal SD',
+            'O' => 'Tahun Lulus SD',
+            'P' => 'Lama SD (Tahun)',
             'Q' => 'Asal Sekolah',
             'R' => 'Tanggal Pindah',
             'S' => 'Dari kelas',
@@ -375,8 +403,8 @@ class DashboardController extends BaseController
             $sheet->setCellValue('G' . $rowIndex, $student->form_alamat);
             $sheet->setCellValue('H' . $rowIndex, $student->form_jenis_alamat);
             $sheet->setCellValue('I' . $rowIndex, $student->form_wali);
-            $sheet->setCellValue('J' . $rowIndex, json_decode($student->form_orang_tua)->ayah);
-            $sheet->setCellValue('K' . $rowIndex, json_decode($student->form_orang_tua)->ibu);
+            $sheet->setCellValue('J' . $rowIndex, isset(json_decode($student->form_orang_tua)->ayah) ? json_decode($student->form_orang_tua)->ayah : '-');
+            $sheet->setCellValue('K' . $rowIndex, isset(json_decode($student->form_orang_tua)->ibu) ? json_decode($student->form_orang_tua)->ibu : '-');
             $sheet->setCellValue('L' . $rowIndex, $student->form_telp);
             $sheet->setCellValue('M' . $rowIndex, $student->form_as);
             $sheet->setCellValue('N' . $rowIndex, $student->form_tk != NULL || $student->form_tk != "" ? $student->form_tk : "-");

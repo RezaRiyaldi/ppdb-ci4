@@ -1,7 +1,7 @@
 <?= $this->extend('layout_dashboard'); ?>
 
 <?= $this->section('content') ?>
-<form action="<?= base_url() ?>users/edit/<?= $user->user_id ?>" method="post">
+<form action="<?= base_url() ?>users/edit/<?= $user->id ?>" method="post">
     <?= csrf_field() ?>
     <div class="mb-3">
         <label for="" class="form-label">Username</label>
@@ -28,6 +28,6 @@
             <?php endforeach ?>
         </select>
     </div>
-    <button type="submit" class="btn btn-success w-100">+ User</button>
+    <button type="submit" class="btn btn-warning w-100">Edit User</button>
 </form>
 <?= $this->endSection('content') ?>

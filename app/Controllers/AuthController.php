@@ -36,14 +36,56 @@ class AuthController extends BaseController
             ->join('roles r', 'r.role_id = users.role_id')
             ->first();
 
-        if ($user && password_verify($input['password'], $user->password)) {
-            session()->set('user', $user);
-            return redirect()->to('/dashboard');
+        if ($user) {
+            if (!$user->is_banned) {
+                if (password_verify($input['password'], $user->password)) {
+                    // Resfresh Banned
+                    $this->user->update($user->id, ['counter_login' => 0]);
+
+                    session()->set('user', $user);
+                    return redirect('dashboard');
+                }
+            }
+        } else {
+            return redirect('login')->with('errors', 'Akun tidak ditemukan');
         }
 
-        session()->setFlashdata('errors', 'Username or Password not valid');
-        return redirect('login');
+        $checkBanned = $this->checkBanned($user);
+
+        if ($checkBanned['is_banned']) {
+            return redirect('login')->with('errors', $checkBanned['message']);
+        }
+
+        return redirect('login')->withInput()->with('errors', $checkBanned['message']);
     }
+
+    private function checkBanned($user)
+    {
+        $response = [];
+        $response['message'] = 'Password salah';
+        $response['is_banned'] = 0;
+        $counter_login = $user->counter_login + 1;
+
+        if ($user->is_banned || $counter_login >= 3) {
+            $response['is_banned'] = 1;
+            $response['message'] = "Akun anda telah diblokir, harap hubungi admin sekolah.";
+            $is_banned = 1;
+        } else {
+            $is_banned = 0;
+        }
+
+        $data_banned = [
+            'counter_login' => $counter_login,
+            'is_banned' => $is_banned
+        ];
+
+        if ($user->role_id == 2) {
+            $this->user->update($user->id, $data_banned);
+        }
+
+        return $response;
+    }
+
 
     public function register()
     {
@@ -130,7 +172,8 @@ class AuthController extends BaseController
             '12' => 'D2',
         ];
 
-        $firstLetter = $month[$currentMonth];
+        // $firstLetter = $month[$currentMonth];
+        $firstLetter = "NR";
         $newNoReg = $firstLetter . date('Y') . str_pad($newNumber, 4, '0', STR_PAD_LEFT);
 
         return $newNoReg;

@@ -24,6 +24,7 @@
                             <th>Username</th>
                             <th>Fullname</th>
                             <th>Email</th>
+                            <th>Status</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -33,17 +34,21 @@
                             $no = 1;
                             foreach ($users as $user) :
                             ?>
-                                <?php if ($user->role_id == 1) : ?>
+                                <?php if ($user->role_id == 1) :
+                                    $text_banned = !$user->is_banned ? 'Aktif' : 'Terblokir';
+                                    $bg_banned = !$user->is_banned ? 'bg-primary' : 'bg-warning';
+                                ?>
                                     <tr>
                                         <td class="align-middle"><?= $no++ ?></td>
                                         <td class="align-middle"><?= $user->username ?></td>
                                         <td class="align-middle"><?= $user->fullname ?></td>
                                         <td class="align-middle"><?= $user->email ?></td>
+                                        <td class="align-middle"><span class="badge <?= $bg_banned ?>"><?= $text_banned ?></span></td>
                                         <td class="align-middle">
                                             <div class="btn-group" role="group" aria-label="Basic example">
-                                                <a href="<?= base_url() ?>users/edit/<?= $user->user_id ?>" class="btn btn-warning"><i class="fas fa-edit"></i></a>
-                                                <?php if ($user->user_id != session()->get('user')->user_id) : ?>
-                                                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteUser" onclick="deleteUser(<?= $user->user_id ?>, '<?= $user->fullname ?>')"><i class="fas fa-trash"></i></button>
+                                                <a href="<?= base_url() ?>users/edit/<?= $user->id ?>" class="btn btn-warning"><i class="fas fa-edit"></i></a>
+                                                <?php if ($user->id != session()->get('user')->id) : ?>
+                                                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalUser" onclick="deleteUser(<?= $user->id ?>, '<?= $user->fullname ?>')"><i class="fas fa-trash"></i></button>
                                                 <?php endif ?>
                                             </div>
                                         </td>
@@ -62,6 +67,7 @@
                             <th>Username</th>
                             <th>Fullname</th>
                             <th>Email</th>
+                            <th>Status</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -70,16 +76,23 @@
                         if (count($users) > 0) :
                             $no = 1;
                             foreach ($users as $user) :
-                                if ($user->role_id == 2) : ?>
+                                if ($user->role_id == 2) :
+                                    $text_banned = !$user->is_banned ? 'Aktif' : 'Terblokir';
+                                    $bg_banned = !$user->is_banned ? 'bg-primary' : 'bg-warning';
+                        ?>
                                     <tr>
                                         <td class="align-middle"><?= $no++ ?></td>
                                         <td class="align-middle"><?= $user->username ?></td>
                                         <td class="align-middle"><?= $user->fullname ?></td>
                                         <td class="align-middle"><?= $user->email ?></td>
+                                        <td class="align-middle"><span class="badge <?= $bg_banned ?>"><?= $text_banned ?></span></td>
                                         <td class="align-middle">
                                             <div class="btn-group" role="group" aria-label="Basic example">
-                                                <a href="<?= base_url() ?>users/edit/<?= $user->user_id ?>" class="btn btn-warning"><i class="fas fa-edit"></i></a>
-                                                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteUser" onclick="deleteUser(<?= $user->user_id ?>, '<?= $user->fullname ?>')"><i class="fas fa-trash"></i></button>
+                                                <a href="<?= base_url() ?>users/edit/<?= $user->id ?>" class="btn btn-warning"><i class="fas fa-edit"></i></a>
+                                                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalUser" onclick="deleteUser(<?= $user->id ?>, '<?= $user->fullname ?>')"><i class="fas fa-trash"></i></button>
+                                                <?php if ($user->is_banned) : ?>
+                                                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalUser" onclick="activateUser(<?= $user->id ?>, '<?= $user->fullname ?>')"><i class="fas fa-user-check"></i></button>
+                                                <?php endif ?>
                                             </div>
                                         </td>
                                     </tr>
@@ -131,17 +144,17 @@
 </div>
 
 <!-- Modal Delete -->
-<div class="modal fade" id="deleteUser" tabindex="-1" aria-labelledby="deleteUserModal" aria-hidden="true">
+<div class="modal fade" id="modalUser" tabindex="-1" aria-labelledby="modalUserModal" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="deleteUserModal">Delete User</h5>
+                <h5 class="modal-title" id="modalUserModal">Delete User</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body"></div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <a class="btn btn-danger">Delete</a>
+                <a class="btn">Delete</a>
             </div>
         </div>
     </div>
@@ -151,8 +164,21 @@
 <?= $this->section('script'); ?>
 <script>
     function deleteUser(id, user) {
-        $("#deleteUser .modal-body").text("Yakin ingin menghapus " + user);
-        $("#deleteUser a").attr("href", "<?= base_url() ?>users/delete/" + id + "?tab=1");
+        $("#modalUser .modal-title").text("Hapus User");
+        $("#modalUser .modal-body").text("Yakin ingin menghapus " + user + "?");
+        $("#modalUser .modal-footer a").text("Delete");
+        $("#modalUser .modal-footer a").addClass("btn-danger");
+        $("#modalUser .modal-footer a").removeClass("btn-success");
+        $("#modalUser a").attr("href", "<?= base_url() ?>users/delete/" + id + "?tab=1");
+    }
+    
+    function activateUser(id, user) {
+        $("#modalUser .modal-title").text("Aktifkan User");
+        $("#modalUser .modal-body").text("Yakin ingin mengaktifkan " + user + "?");
+        $("#modalUser .modal-footer a").text("Aktifkan");
+        $("#modalUser .modal-footer a").addClass("btn-success");
+        $("#modalUser .modal-footer a").removeClass("btn-danger");
+        $("#modalUser a").attr("href", "<?= base_url() ?>users/activate/" + id + "?tab=1");
     }
 </script>
 <?= $this->endSection('script'); ?>
